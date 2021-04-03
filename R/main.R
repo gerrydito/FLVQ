@@ -2,6 +2,8 @@ source('R//train_FLVQ.R')
 source('R//predictFLVQ.R')
 library(rsample)
 dta1 <- iris
+
+set.seed(123)
 index_train1 <- initial_split(dta1,prop = 0.8,
                               strata = Species )
 train1 <- training(index_train1)

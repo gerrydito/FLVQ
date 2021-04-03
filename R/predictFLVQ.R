@@ -3,7 +3,7 @@ predict.FLVQ=function(model,newdata){
     "class model must be FLVQ"
   }
   predictors <- newdata %>% select(-all_of(model$response))
-  y <- dta1 %>% pull(all_of(model$response))
+  y <- newdata %>% pull(all_of(model$response))
 
   fuzzy_predictors <- apply(predictors,1,fuzzification)
 
